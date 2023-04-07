@@ -15,14 +15,13 @@ spec:
       containers:
         - name: platformservice
           image: oguzhankaya/platformservice:latest
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: platforms-clusterip-srv
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: platformservice
   ports:

@@ -15,14 +15,13 @@ spec:
       containers:
         - name: commandservice
           image: oguzhankaya/commandservice:latest
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: commands-clusterip-srv
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: commandservice
   ports:
@@ -30,3 +29,4 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
+      
